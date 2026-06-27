@@ -1,0 +1,23 @@
+# Project-local Codex configuration for the Tetris app.
+# Keep this lean: ECC skills are loaded from `.agents/skills/`, and this file
+# only enables project-local agent roles. MCP servers and global hooks are not
+# enabled for this repo by default.
+
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 4
+max_depth = 1
+
+[agents.explorer]
+description = "Read-only codebase explorer for gathering evidence before changes are proposed."
+config_file = "agents/explorer.toml"
+
+[agents.reviewer]
+description = "Reviewer focused on correctness, security, regressions, and missing tests."
+config_file = "agents/reviewer.toml"
+
+[agents.docs_researcher]
+description = "Documentation specialist that verifies APIs, framework behavior, and release notes."
+config_file = "agents/docs-researcher.toml"
