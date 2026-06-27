@@ -42,6 +42,17 @@ swift run TetrisApp
 swift test
 ```
 
+## Release DMG
+
+GitHub Actions builds a macOS DMG when a release tag is pushed.
+
+```sh
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The workflow also supports manual runs from the Actions tab. Following the reference project, macOS builds use ad-hoc codesigning (`codesign --sign -`), so no Apple signing certificate or notarization credential is stored in GitHub Secrets.
+
 ## Project Layout
 
 - `Sources/TetrisCore/`: framework-independent game rules and scoring logic

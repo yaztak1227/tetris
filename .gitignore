@@ -21,6 +21,7 @@ xcuserdata/
 !.env.example
 
 # Logs and temporary files
+dist/
 *.log
 *.tmp
 *.swp
